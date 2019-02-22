@@ -1,0 +1,15 @@
+version: '3'
+services:
+  core_services:
+    image: creativitykills/nginx-php-server
+    container_name: audio-transcriber
+    ports:
+      - "44670:80"
+    volumes:
+      - ./:/var/www
+    networks: 
+      - backend
+  
+networks:
+  backend:
+    driver: bridge
